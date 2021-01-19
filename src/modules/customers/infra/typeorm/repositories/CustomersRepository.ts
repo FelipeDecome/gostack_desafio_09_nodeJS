@@ -17,9 +17,7 @@ class CustomersRepository implements ICustomersRepository {
       email,
     });
 
-    await this.ormRepository.save(customer);
-
-    return customer;
+    return this.ormRepository.save(customer);
   }
 
   public async findById(id: string): Promise<Customer | undefined> {
